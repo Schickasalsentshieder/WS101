@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Using Display Property</title>
+    <style>
+        .textbox {
+            display: block;
+            width: 250px;
+            margin-bottom: 10px;
+        }
+
+        .inline p {
+            display: inline-block;
+            width: 200px;
+            vertical-align: middle;
+        }
+
+        .inline button {
+            display: inline-block;
+            width: 60px;
+            vertical-align: middle;
+        }
+        .google {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .google img {
+            width: 250px;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .search-box {
+            width: 500px;
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: 2px solid transparent;
+            font-size: 16px;
+            outline: none;
+            background-image: linear-gradient(white, white),linear-gradient(90deg,#4285F4,#DB4437,#F4B400,#0F9D58); 
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+        .search-box:focus {
+            box-shadow: 0 0 8px rgba(66,133,244,0.6);
+        }
+        .hello {
+            text-decoration: none;
+            color: blue;
+        }  
+        .secret {
+            text-align: right;
+            color: red;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<h2><a href="../../index.html" target="_blank" class="hello">PORTFOLIO</a></h2>
+<fieldset>
+
+    <div class="indent">
+        <input type="text" class="textbox" placeholder="Name">
+        <input type="email" class="textbox" placeholder="Email">
+    </div>
+
+    <div class="inline">
+        <p>
+            Thanks for chatting with our <br> customer support.
+            Would you <br> like to take our quick survey?
+        </p>
+        <button>Yes</button>
+        <button>No</button>
+    </div>
+ <a href="Challenge.html"><p class="secret">Challenge?</p></a>
+    <div class="google">
+        <img src="../../image/google.png" alt="Google Logo">
+
+        <form action="https://www.google.com/search" method="GET">
+            <input type="text" name="q" class="search-box"
+            placeholder="Search Google or type a URL">
+        </form>
+    </div>
+</fieldset>
+<h2>Source Code</h2>
+<img src="../../image/SourceCode6.1.png" width="700" height="1200">
+</body>
+</html>
