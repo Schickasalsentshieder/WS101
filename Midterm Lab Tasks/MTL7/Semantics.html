@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantics</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        background-image: url(image/background3.gif);
+        color: rgb(45, 63, 231);
+    }
+    header {
+        background-color: brown;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    header h1 {
+        text-align: center;
+    }
+    nav {
+        background-color: rgb(14, 255, 235);
+        height: 50px;
+    }
+    main {
+        background-color: grey;
+        height: auto;
+    }
+    aside {
+        background-color:chartreuse;
+        width: 32%;
+        float: left;
+        margin: 5px;
+    }
+    section {
+        background-color: orange;
+        width: 32%;
+        float: left;
+        margin: 5px;
+    }
+    article {
+        background-color:dodgerblue ;
+        width: 32%;
+        float: left;
+        margin: 5px;
+    }
+    footer {
+        background-color: indianred;
+        height: 100px;
+        clear: both;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    p {
+        text-align: justify;
+        margin: 20px;
+    }
+    
+    @media screen and (max-width:800px)
+    {
+     aside, section, article
+    {
+        width: 100%;
+    }
+    }
+</style>
+<body>
+  <header>
+    <h1>This is the header</h1>
+    </header>
+  <nav>
+
+  </nav>
+<main>
+    <aside>
+ <h1>This is the aside</h1>
+<p>
+    Lorem ipsum dolor sit amet consectetur adipisicing
+</p>
+    </aside>
+    <section>
+ <h1>This is the section</h1>
+<p>
+    Lorem ipsum dolor sit amet consectetur adipisicing
+</p>
+    </section>
+    <article>
+         <h1>This is the article</h1>
+<p>
+    Lorem ipsum dolor sit amet consectetur adipisicing
+</p>
+    </article>
+</main>
+   <footer>
+     <h1>This is the footer</h1>
+   </footer>
+</body>
+</html>
