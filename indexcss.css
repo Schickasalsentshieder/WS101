@@ -8,6 +8,7 @@
     0 0 30px red,
     0 0 60px red;
   font-family: 'Creepster';
+  z-index: 9999;
 } 
 body {
   margin: 0;
@@ -90,11 +91,13 @@ body::after {
 .left-sword {
   transform: rotate(69deg)
   scale(1.5);
+  z-index: 0;
 }
 
 .right-sword {
   transform: rotate(290deg)
   scale(1.5);
+  z-index: 0;
 }
 #main-nah {
   position: relative;
@@ -109,18 +112,89 @@ body::after {
     inset -5px -5px 10px #666,
     0 0 20px black;
 }
-.lab-box{
+.lab-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+.lab-box {
+    position: relative;
     width: 100%;
-    max-width:260px;
-    padding: 20px;
-    border-radius: 15px;
+    max-width: 180px;        /* smaller width */
+    padding: 20px 15px;      /* smaller height */
     text-align: center;
     text-decoration: none;
-    color: white;
+    color: rgb(0, 191, 255);
     background: rgba(0,0,0,0.65);
-    border: 2px solid rgb(76,166,240);
     backdrop-filter: blur(6px);
     transition: all 0.4s ease;
+
+    /* HEXAGON shape */
+    clip-path: polygon(
+      25% 0%, 
+      75% 0%, 
+      100% 50%, 
+      75% 100%, 
+      25% 100%, 
+      0% 50%
+    );
+
+    /* base glow */
+    box-shadow:
+        0 0 10px rgb(240, 76, 76),
+        0 0 20px rgba(130, 6, 6, 0.6);
+}
+
+/* Add animated colored edges */
+.lab-box::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    clip-path: inherit;
+    background: linear-gradient(
+        90deg,
+        rgba(250,0,0,0.9),   /* left */
+        transparent 30%,
+        transparent 70%,
+        rgba(250,0,0,0.9)    /* right */
+    );
+    opacity: 0.7;
+    animation: labBoxGlow 2s infinite linear;
+    pointer-events: none;  /* so content is still clickable */
+}
+
+/* Glow animation */
+@keyframes labBoxGlow {
+    0% { opacity: 0.9; }
+    50% { opacity: 0.3; }
+    100% { opacity: 0.9; }
+}
+
+/* Hover effect */
+.lab-box:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow:
+        0 0 15px rgb(250, 3, 3),
+        0 0 30px rgb(250, 3, 3),
+        0 0 45px rgb(250, 3, 3);
+    border-color: rgb(250, 3, 3);
+}
+
+/* Headings inside hexagon */
+.lab-box h4{
+    margin: 8px 0;
+    font-family: Impact,'Times New Roman', serif;
+    color: white
+}
+
+/* Paragraphs inside hexagon */
+.lab-box p{
+    font-size: 12px;
+    color: white;
+    background: transparent;
 }
 .float {
   text-align: center; 
@@ -132,7 +206,7 @@ body::after {
   height: 200px;
   border-radius: 50%;
   margin-bottom: 20px;
-  box-shadow: 0 0 20px #ff0000, 0 0 40px #000000;
+  box-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
   animation: float 3s ease-in-out infinite;
 }
 
@@ -150,6 +224,9 @@ p, li, td, th {
 }
 ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 /* Profile Image */
 .profile {
@@ -161,19 +238,70 @@ ul {
   animation: float 3s ease-in-out infinite;
 }
 .box {
+    position: relative;
+    z-index: 1;
     background: rgba(0,0,0,0.6);
     backdrop-filter: blur(8px);
-    border: 1px solid #ff1a1a;
-    padding: 25px;
-    border-radius: 18px;
-    box-shadow: 0 0 15px rgb(255, 15, 15);
+    padding: 60px 40px;
     color: #ff0000;
-    margin: 20px auto;
+    margin: 40px auto;
     max-width: 800px;
-    transform: scale(1);
-    transition: 0.3s ease-in-out;
     text-align: center;
-    animation: pulseShadow 2s infinite ease-in-out;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+
+    /* BASE GLOW */
+    box-shadow: 
+      0 0 15px red,
+      0 0 40px rgba(255, 0, 0, 0.6);
+
+    overflow: hidden;
+}
+.box::before {
+  content: "";
+  pointer-events: none;
+  z-index: 0;
+  position: absolute;
+  inset: 0;
+  transform: scale(1.05); /* or whatever scale you want */
+    /* optional: add box-shadow for nice effect */
+    box-shadow: 0 0 15px rgb(250, 3, 3), 0 0 30px rgb(250, 3, 3);
+  clip-path: inherit;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255,0,0,0.9),   /* left */
+    transparent 30%,
+    transparent 70%,
+    rgba(255,0,0,0.9)    /* right */
+  );
+
+  opacity: 0.7;
+  animation: sideGlow 2s infinite linear;
+  background: linear-gradient(
+    90deg,
+    rgba(255,0,0,0.9),
+    transparent 25%,
+    transparent 75%,
+    rgba(255,0,0,0.9)
+  ),
+  linear-gradient(
+    180deg,
+    rgba(255,0,0,0.6),
+    transparent 30%,
+    transparent 70%,
+    rgba(255,0,0,0.6)
+  );
+}
+@keyframes sideGlow {
+  0% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.9;
+  }
 }
 @keyframes pulseShadow {
   0% {
@@ -190,6 +318,7 @@ ul {
   transform: scale(1.05);
   box-shadow: 0 0 15px rgb(197, 24, 24);
   animation: pulseShadow 0.5s infinite ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 @keyframes glowBox {
@@ -216,10 +345,10 @@ ul {
 }
 
 /* Assign each image a side of the X */
-.html { animation-name: bounceTopLeft; }
-.css { animation-name: bounceTopRight; }
-.java { animation-name: bounceBottomLeft; }
-.python { animation-name: bounceBottomRight; }
+.html { animation-name: bounceTopLeft; box-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;}
+.css { animation-name: bounceTopRight; box-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;}
+.java { animation-name: bounceBottomLeft; box-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;}
+.python { animation-name: bounceBottomRight; box-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;}
 
 /* Bounce paths, stay away from center */
 @keyframes bounceTopLeft {
@@ -360,8 +489,8 @@ body > *:not(.intro) {
   100% { opacity: 1; }
 }
 @media screen and (max-width: 600px) {
-   body::before,
-  body::after {
+    body::before,
+    body::after {
     display: none;
   }
    .text1 {
@@ -383,6 +512,9 @@ body > *:not(.intro) {
     animation: none;
   }
   .box:hover {
+    animation: none;
+  }
+  .box::before {
     animation: none;
   }
   .fight-x img.lang {
