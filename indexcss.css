@@ -1,4 +1,3 @@
-/* -------------------- MAIN CONTENT -------------------- */
 .title {
   text-align: center;
   color: white;
@@ -18,33 +17,25 @@ body {
   position: relative;
   overflow-x: hidden;
 }
-/* Left and Right side wind pulses */
-body::before,
 body::after {
   content: "";
   position: fixed;
   top: 0;
-  width: 60px;       /* width of the pulsing edge */
+  width: 60px;
   height: 100%;
   pointer-events: none;
   z-index: 1000;
 }
-
-/* Left side pulse */
 body::before {
   left: 0;
   background: linear-gradient(to right, rgba(255,0,0,1), rgba(255,0,0,0.5), transparent);
   animation: pulseLeft 1.5s linear infinite;
 }
-
-/* Right side pulse */
 body::after {
   right: 0;
   background: linear-gradient(to left, rgba(255,0,0,1), rgba(255,0,0,0.5), transparent);
   animation: pulseRight 1.5s linear infinite;
 }
-
-/* Left animation */
 @keyframes pulseLeft {
   0% {
     transform: translateX(-100%);
@@ -59,8 +50,6 @@ body::after {
     opacity: 1;
   }
 }
-
-/* Right animation */
 @keyframes pulseRight {
   0% {
     transform: translateX(100%);
@@ -78,21 +67,16 @@ body::after {
 .profile-group {
   display: flex;
   align-items: center;
-  justify-content: center; /* space between sword and profile */
+  justify-content: center;
 }
-
-/* swords */
 .sword {
   width: 90px;
   pointer-events: none;
 }
-
-/* optional angles */
 .left-sword {
   transform: rotate(69deg)
   scale(1.5);
 }
-
 .right-sword {
   transform: rotate(290deg)
   scale(1.5);
@@ -136,7 +120,6 @@ body::after {
   box-shadow: 0 0 20px #ff0000, 0 0 40px #000000;
   animation: float 3s ease-in-out infinite;
 }
-
 @keyframes float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -152,7 +135,6 @@ p, li, td, th {
 ul {
   list-style: none;
 }
-/* Profile Image */
 .profile {
   width: 200px;
   height: 200px;
@@ -192,52 +174,43 @@ ul {
   box-shadow: 0 0 15px rgb(197, 24, 24);
   animation: pulseShadow 0.5s infinite ease-in-out;
 }
-
 @keyframes glowBox {
     0% { box-shadow: 0 0 15px rgba(181, 7, 7, 0.3); }
     100% { box-shadow: 0 0 40px rgba(255, 19, 19, 0.7); }
 }
 .fight-x {
   position: relative;
-  width: 300px;   /* container */
+  width: 300px; 
   height: 300px;
   margin: 0 auto;
 }
-
 .fight-x img.lang {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation-duration: 6s;   /* slow bounce */
+  animation-duration: 6s; 
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-  width: 180px;  /* images bigger */
+  width: 180px;
   height: auto;
 }
-
-/* Assign each image a side of the X */
 .html { animation-name: bounceTopLeft; }
 .css { animation-name: bounceTopRight; }
 .java { animation-name: bounceBottomLeft; }
 .python { animation-name: bounceBottomRight; }
-
-/* Bounce paths, stay away from center */
 @keyframes bounceTopLeft {
   0%, 100% { transform: translate(-50%, -50%) translate(-100px, -100px); }
   50% { transform: translate(-50%, -50%) translate(-80px, -50px); }
 }
-
 @keyframes bounceTopRight {
   0%, 100% { transform: translate(-50%, -50%) translate(100px, -100px); }
   50% { transform: translate(-50%, -50%) translate(80px, -50px); }
 }
-
 @keyframes bounceBottomLeft {
   0%, 100% { transform: translate(-50%, -50%) translate(-100px, 100px); }
   50% { transform: translate(-50%, -50%) translate(-80px, 50px); }
 }
-
 @keyframes bounceBottomRight {
   0%, 100% { transform: translate(-50%, -50%) translate(100px, 100px); }
   50% { transform: translate(-50%, -50%) translate(80px, 50px); }
@@ -251,19 +224,15 @@ hr {
   left: 0;
   width: 100vw;
   height: 100vh;
-
   background: url(image/download.gif) no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
-
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
   animation: hideIntro 4.5s forwards;
 }
-
-/* DARK OVERLAY (Option 2) */
 .intro::before {
   content: "";
   position: absolute;
@@ -271,8 +240,6 @@ hr {
   height: 100%;
   z-index: 1;
 }
-
-
 .flash {
   position: absolute;
   width: 100%;
@@ -281,53 +248,42 @@ hr {
   opacity: 0;
   animation: lightning 4.5s linear;
 }
-
 .text {
   position: absolute;
-  color: white; /* Option 1 (main readable color) */
+  color: white;
   font-size: 3rem;
   opacity: 0;
   z-index: 2;
-
   text-shadow: 
     0 0 5px white,
     0 0 15px red,
     0 0 30px red,
-    0 0 60px red; /* Option 3 glow */
-
+    0 0 60px red;
   font-family: 'Creepster', cursive;
 }
-
 .text1 { top: 35%; animation: text1Stay 4.5s linear forwards; font-family: 'Creepster', cursive;}
 .text2 { top: 45%; animation: text2Stay 4.5s linear forwards; font-family: 'Creepster', cursive;}
-
 @keyframes lightning {
   /* First flash */
   22% { opacity: 0; }
   22.01% { opacity: 1; }
   24.5% { opacity: 1; }
   24.51% { opacity: 0; }
-
-  /* Second flash */
   34% { opacity: 0; }
   34.01% { opacity: 1; }
   36.5% { opacity: 1; }
   36.51% { opacity: 0; }
-
-  /* Final flash with fade */
   80% { opacity: 0; }
   80.01% { opacity: 1; }
   90% { opacity: 0; }
 }
-
 @keyframes text1Stay {
   22% { opacity: 0; }
   22.01% { opacity: 1; }
   79.99% { opacity: 1; }
-  80% { opacity: 0; } /* disappear on last flash */
+  80% { opacity: 0; }
   100% { opacity: 0; }
 }
-
 @keyframes text2Stay {
   34% { opacity: 0; }
   34.01% { opacity: 1; }
@@ -335,19 +291,14 @@ hr {
   80% { opacity: 0; }
   100% { opacity: 0; }
 }
-
-/* Hide intro after animation */
 @keyframes hideIntro {
   0%, 85% { opacity: 1; }
   100% { opacity: 0; visibility: hidden; }
 }
-
-/* Make main content visible after intro */
 body > *:not(.intro) {
   animation: showMain 4.5s forwards;
   opacity: 0;
 }
-
 @keyframes showMain {
   0%, 80% { opacity: 0; }
   100% { opacity: 1; }
