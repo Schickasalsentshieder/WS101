@@ -357,73 +357,9 @@ body > *:not(.intro) {
   100% { opacity: 1; }
 }
 @media screen and (max-width: 600px) {
-  
-  /* Shrink the X images */
-  .fight-x img.lang {
-    width: 100px;
-    height: auto;
-  }
-
-  /* Override animations with smaller bounce distances */
-  .html { animation-name: bounceTopLeftSmall; }
-  .css { animation-name: bounceTopRightSmall; }
-  .java { animation-name: bounceBottomLeftSmall; }
-  .python { animation-name: bounceBottomRightSmall; }
-}
-
-/* Smaller bounce animations for phones */
-@keyframes bounceTopLeftSmall {
-  0%, 100% { transform: translate(-50%, -50%) translate(-50px, -50px); }
-  50% { transform: translate(-50%, -50%) translate(-40px, -25px); }
-}
-
-@keyframes bounceTopRightSmall {
-  0%, 100% { transform: translate(-50%, -50%) translate(50px, -50px); }
-  50% { transform: translate(-50%, -50%) translate(40px, -25px); }
-}
-
-@keyframes bounceBottomLeftSmall {
-  0%, 100% { transform: translate(-50%, -50%) translate(-50px, 50px); }
-  50% { transform: translate(-50%, -50%) translate(-40px, 25px); }
-}
-
-@keyframes bounceBottomRightSmall {
-  0%, 100% { transform: translate(-50%, -50%) translate(50px, 50px); }
-  50% { transform: translate(-50%, -50%) translate(40px, 25px); }
-}
-  body::before,
-  body::after {
-    display: none;
-}
-  .float img {
-    animation: none; /* stop floating on phones */
-    width: 120px;
-    height: 120px;
-  }
-
-  .fight-x img.lang {
-    animation: none; /* stop bouncing */
-    width: 120px;
-  }
-
-  .box {
-    box-shadow: 0 0 10px rgb(255, 15, 15); /* lighter shadow for phones */
-  }
-  .box {
-    max-width: 90vw;   /* almost full screen width */
-    padding: 4vw;      /* scale padding for small screens */
-    font-size: 4vw;    /* text scales with viewport */
-  }
-  p, li {
-    font-size: 4vw;    /* paragraphs and lists scale too */
-  }
-  .text1 {
-    top: 25vh; 
+  .text1, .text2 {
     font-size: clamp(2rem, 10vw, 3rem);
-  }
-  .text2 {
-    top: 45vh; 
-    font-size: clamp(2rem, 10vw, 3rem);
+    top: 25vh; /* move text down a bit for small screens */
   }
   .title {
     font-size: 8vw; /* scales only on phones */
@@ -441,3 +377,4 @@ body > *:not(.intro) {
     width: 120px;
     height: 120px;
   }
+}
