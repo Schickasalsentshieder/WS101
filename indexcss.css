@@ -357,6 +357,40 @@ body > *:not(.intro) {
   100% { opacity: 1; }
 }
 @media screen and (max-width: 600px) {
+  
+  /* Shrink the X images */
+  .fight-x img.lang {
+    width: 100px;
+    height: auto;
+  }
+
+  /* Override animations with smaller bounce distances */
+  .html { animation-name: bounceTopLeftSmall; }
+  .css { animation-name: bounceTopRightSmall; }
+  .java { animation-name: bounceBottomLeftSmall; }
+  .python { animation-name: bounceBottomRightSmall; }
+}
+
+/* Smaller bounce animations for phones */
+@keyframes bounceTopLeftSmall {
+  0%, 100% { transform: translate(-50%, -50%) translate(-50px, -50px); }
+  50% { transform: translate(-50%, -50%) translate(-40px, -25px); }
+}
+
+@keyframes bounceTopRightSmall {
+  0%, 100% { transform: translate(-50%, -50%) translate(50px, -50px); }
+  50% { transform: translate(-50%, -50%) translate(40px, -25px); }
+}
+
+@keyframes bounceBottomLeftSmall {
+  0%, 100% { transform: translate(-50%, -50%) translate(-50px, 50px); }
+  50% { transform: translate(-50%, -50%) translate(-40px, 25px); }
+}
+
+@keyframes bounceBottomRightSmall {
+  0%, 100% { transform: translate(-50%, -50%) translate(50px, 50px); }
+  50% { transform: translate(-50%, -50%) translate(40px, 25px); }
+}
   body::before,
   body::after {
     display: none;
@@ -398,6 +432,7 @@ body > *:not(.intro) {
     padding: 4vw;
     font-size: 4vw;
     max-width: 90vw;
+    animation: none;
   }
   .fight-x img.lang {
     width: 120px;
@@ -406,4 +441,3 @@ body > *:not(.intro) {
     width: 120px;
     height: 120px;
   }
-}
