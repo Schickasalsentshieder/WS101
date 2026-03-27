@@ -360,6 +360,10 @@ body > *:not(.intro) {
   100% { opacity: 1; }
 }
 @media screen and (max-width: 600px) {
+   body::before,
+  body::after {
+    display: none;
+  }
    .text1 {
     font-size: clamp(2rem, 10vw, 3rem);
     top: 25vh; /* vertical position for "MY" */
@@ -376,6 +380,9 @@ body > *:not(.intro) {
     padding: 4vw;
     font-size: 4vw;
     max-width: 90vw;
+    animation: none;
+  }
+  .box:hover {
     animation: none;
   }
   .fight-x img.lang {
