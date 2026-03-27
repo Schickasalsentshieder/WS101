@@ -263,34 +263,11 @@ ul {
   position: absolute;
   inset: 0;
   transform: scale(1.05); /* or whatever scale you want */
-    /* optional: add box-shadow for nice effect */
-    box-shadow: 0 0 15px rgb(250, 3, 3), 0 0 30px rgb(250, 3, 3);
+  /* optional: add box-shadow for nice effect */
+  box-shadow: 0 0 15px rgb(250, 3, 3), 0 0 30px rgb(250, 3, 3);
   clip-path: inherit;
-
-  background: linear-gradient(
-    90deg,
-    rgba(255,0,0,0.9),   /* left */
-    transparent 30%,
-    transparent 70%,
-    rgba(255,0,0,0.9)    /* right */
-  );
-
   opacity: 0.7;
   animation: sideGlow 2s infinite linear;
-  background: linear-gradient(
-    90deg,
-    rgba(255,0,0,0.9),
-    transparent 25%,
-    transparent 75%,
-    rgba(255,0,0,0.9)
-  ),
-  linear-gradient(
-    180deg,
-    rgba(255,0,0,0.6),
-    transparent 30%,
-    transparent 70%,
-    rgba(255,0,0,0.6)
-  );
 }
 @keyframes sideGlow {
   0% {
