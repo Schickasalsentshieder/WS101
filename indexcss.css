@@ -297,9 +297,9 @@ hr {
   font-family: 'Creepster', cursive;
 }
 
-.text1 { top: 35%; animation: text1Stay 4.5s linear forwards; font-family: 'Creepster', cursive;}
-.text2 { top: 45%; animation: text2Stay 4.5s linear forwards; font-family: 'Creepster', cursive;}
-
+.text1 { top: 35vh; animation: text1Stay 4.5s linear forwards; font-family: 'Creepster', cursive;}
+.text2 { top: 45vh; animation: text2Stay 4.5s linear forwards; font-family: 'Creepster', cursive;}
+.text1, .text2 {font-size: clamp(2rem, 8vw, 4rem);}
 @keyframes lightning {
   /* First flash */
   22% { opacity: 0; }
@@ -352,6 +352,10 @@ body > *:not(.intro) {
   100% { opacity: 1; }
 }
 @media screen and (max-width: 600px) {
+  .text1, .text2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+    top: 25vh; /* move text down a bit for small screens */
+  }
   .title {
     font-size: 8vw; /* scales only on phones */
   }
