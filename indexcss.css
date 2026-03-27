@@ -357,6 +357,32 @@ body > *:not(.intro) {
   100% { opacity: 1; }
 }
 @media screen and (max-width: 600px) {
+  body::before,
+  body::after {
+    display: none;
+}
+  .float img {
+    animation: none; /* stop floating on phones */
+    width: 120px;
+    height: 120px;
+  }
+
+  .fight-x img.lang {
+    animation: none; /* stop bouncing */
+    width: 120px;
+  }
+
+  .box {
+    box-shadow: 0 0 10px rgb(255, 15, 15); /* lighter shadow for phones */
+  }
+  .box {
+    max-width: 90vw;   /* almost full screen width */
+    padding: 4vw;      /* scale padding for small screens */
+    font-size: 4vw;    /* text scales with viewport */
+  }
+  p, li {
+    font-size: 4vw;    /* paragraphs and lists scale too */
+  }
   .text1 {
     top: 25vh; 
     font-size: clamp(2rem, 10vw, 3rem);
