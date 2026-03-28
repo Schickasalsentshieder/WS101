@@ -1,12 +1,11 @@
 .title {
   text-align: center;
   color: white;
-  font-size: 3rem;
-  text-shadow: 
+  text-shadow:
     0 0 5px white,
     0 0 15px red,
-    0 0 30px red,
-    0 0 60px red;
+    0 0 30px red;
+  font-size: 3rem;
   font-family: 'Creepster';
   z-index: 9999;
 } 
@@ -18,7 +17,16 @@ body {
   position: relative;
   overflow-x: hidden;
 }
-
+/* GPU fix (safe version) */
+.box,
+.lab-box,
+.float img,
+.fight-x img,
+body::before,
+body::after {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
 body::before,
 body::after {
   content: "";
@@ -216,11 +224,36 @@ body::after {
   100% { transform: translateY(0); }
 }
 p, li, td, th {
-  color: rgb(255, 0, 0);
-  text-shadow: 0 0 15px rgba(46, 66, 78, 0.7), 0 0 30px rgba(255, 151, 151, 0.7);
+  color: #f5f5f5;
+  text-shadow: none;
   font-family: sans-serif;
   font-size: medium;
   font-style: bold;
+}
+p {
+  color: #f5f5f5;        /* soft white, easy on eyes */
+  text-shadow: none;      /* remove heavy blur/glow */
+  line-height: 1.6;       /* better spacing for readability */
+  font-size: 1rem;        /* adjust for mobile if needed */
+}
+li {
+  color: #f5f5f5;
+  text-shadow: none;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+a {
+  color: #ff4d4d;             /* soft red accent */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #ff0000;             /* brighter red on hover */
+}
+h2, h3, h4 {
+  color: #ff4d4d;
+  text-shadow: 0 0 5px rgba(255,0,0,0.5);
 }
 ul {
   list-style: none;
@@ -248,6 +281,7 @@ ul {
     max-width: 800px;
     text-align: center;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
+    animation: pulseShadow 2s infinite ease-in-out;
 
     /* BASE GLOW */
     box-shadow: 
@@ -359,7 +393,7 @@ hr {
 
   background: url(image/download.gif) no-repeat center center;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
 
   display: flex;
   justify-content: center;
@@ -470,6 +504,14 @@ body > *:not(.intro) {
     body::after {
     display: none;
   }
+  .lab-box::before {
+    animation: none;
+  }
+    .box:hover,
+    .lab-box:hover {
+    transform: none;
+    box-shadow: 0 0 10px red; /* optional: keep slight glow */
+  }
    .text1 {
     font-size: clamp(2rem, 10vw, 3rem);
     top: 25vh; /* vertical position for "MY" */
@@ -482,11 +524,16 @@ body > *:not(.intro) {
   .title {
     font-size: 8vw; /* scales only on phones */
   }
+  .lab-box {
+    box-shadow: 0 0 8px red;
+  }
   .box {
     padding: 4vw;
     font-size: 4vw;
     max-width: 90vw;
     animation: none;
+    backdrop-filter: none;
+    box-shadow: 0 0 10px red;
   }
   .box:hover {
     animation: none;
@@ -500,5 +547,14 @@ body > *:not(.intro) {
   .float img {
     width: 120px;
     height: 120px;
+    animation: none;
+  }
+  .intro {
+    display: none;
+  }
+
+  body > *:not(.intro) {
+    animation: none;
+    opacity: 1;
   }
 }
