@@ -31,7 +31,7 @@ body.light-mode {
     --bg-color: #f0f2f5;
     --text-color: #222;
     --primary-color: #ffffff;
-    --secondary-color: #ffffff;   /* white for hover/glow */
+    --secondary-color: #ffffff;
     --box-bg: rgba(255,255,255,255,0.9);
     --lab-box-bg: rgba(255,255,255,255,0.9);
     --tech-box-shadow: 0 0 20px #ffffff, 0 0 40px #ffffff;
