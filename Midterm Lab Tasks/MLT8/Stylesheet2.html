@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SS2</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #1CA3DE;
+  color: #222;
+  padding: 30px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+header h1 {
+  color: white;
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+header p {
+  color: #f0f0f0;
+  font-size: 18px;
+}
+
+/* Container layout */
+.container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+}
+
+/* Content */
+.content h2 {
+  color: #1B5886;
+  margin-bottom: 15px;
+}
+.content p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+.links a {
+  color: #3776A1;
+  text-decoration: none;
+  margin-right: 10px;
+}
+.links a:hover {
+  color: #000;
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sidebar button {
+  background: #3da6d3;
+  border: none;
+  padding: 10px;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+  text-align: left;
+}
+.sidebar button a {
+  color: white;
+  text-decoration: none;
+}
+.sidebar button:hover {
+  background: #2a8bb2;
+}
+
+/* Collapsible submenu */
+.submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 15px;
+}
+/* Highlight the second link */
+.submenu a:nth-child(2) {
+  background-color: #1B5886;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+.submenu a {
+  font-size: 14px;
+  color: #1B5886;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+.submenu a:hover {
+  color: #000;
+  background-color: #d0ebf7;
+}
+
+/* Footer */
+.footer {
+  margin-top: 25px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+}
+.footer h3 {
+  color: #1B5886;
+  margin-bottom: 10px;
+}
+
+/* Bottom text */
+.bottom {
+  margin-top: 20px;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<script>
+function toggleSubmenu(id) {
+  const submenu = document.getElementById(id);
+  submenu.style.display = submenu.style.display === 'flex' ? 'none' : 'flex';
+}
+</script>
+
+</head>
+<body>
+
+<header>
+  <h1>Welcome to My Homepage</h1>
+  <p>Use the menu to select different Stylesheets</p>
+</header>
+
+<div class="container">
+
+  <div class="content">
+    <h2>Same Page, Different Stylesheets</h2>
+    <p>This is a demonstration of how different stylesheets can change the layout of your HTML page. Use the sidebar to select different stylesheets.</p>
+
+    <div class="links">
+      <a href="Stylesheet1.html">Stylesheet1</a>
+      <a href="Stylesheet2.html">Stylesheet2</a>
+      <a href="Stylesheet3.html">Stylesheet3</a>
+      <a href="Stylesheet4.html">Stylesheet4</a>
+    </div>
+
+    <h2>No Styles</h2>
+    <p>Without a stylesheet, the page will show its default HTML structure. <br><a href="Nostylesheet.html">No Stylesheet.</a></p>
+  </div>
+
+  <div class="sidebar">
+    <button onclick="toggleSubmenu('stylesheets')">Stylesheets ▼</button>
+    <div class="submenu" id="stylesheets">
+      <a href="Stylesheet1.html">Stylesheet 1</a>
+      <a href="Stylesheet2.html">Stylesheet 2</a>
+      <a href="Stylesheet3.html">Stylesheet 3</a>
+      <a href="Stylesheet4.html">Stylesheet 4</a>
+      <a href="Nostylesheet.html">No Stylesheet</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <h3>Side-Bar</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+</div>
+
+<div class="bottom">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+</div>
+
+</body>
+</html>
