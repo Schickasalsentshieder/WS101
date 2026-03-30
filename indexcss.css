@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    max-width: 100%;
 }
 :root {
     --bg-color: #000000;
@@ -63,7 +64,7 @@ html {
 }
 html, body {
     height: 100%;
-   
+    overflow-x: hidden;
 }
 .section-nav {
     display: flex;
@@ -98,7 +99,7 @@ body {
     background: var(--bg-image) no-repeat center center fixed;
     background-size: cover;
     position: relative;
-    min-height: 100dvh;
+    min-height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
 }
