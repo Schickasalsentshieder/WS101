@@ -418,9 +418,10 @@ p, li, td, th {
     display: block;
     opacity: 0;
     position: fixed;
-    top: 30px;
+    top: 20px;
     right: 20px;
     z-index: 10000;
+    transform: translateZ(0);
     padding: 15px 15px;
     background-color: var(--theme-toggle-background-color);
     color: var(--theme-toggle-color);
@@ -429,7 +430,6 @@ p, li, td, th {
     border-radius: 100px;
     cursor: pointer;
     transition: opacity 1s ease;
-    transform: translateZ(0);
 }
 #theme-toggle.show {
     opacity: 1;
@@ -437,8 +437,9 @@ p, li, td, th {
 #scrollTopBtn {
     display: none;
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
+    transform: translateZ(0);
     z-index: 99;
     border: none;
     outline: none;
@@ -450,7 +451,6 @@ p, li, td, th {
     font-size: 18px;
     box-shadow: var(--box-box-shadow);
     transition: 0.3s;
-    transform: translateZ(0);
 }
 
 #scrollTopBtn:hover {
