@@ -99,7 +99,7 @@ body {
     background-size: cover;
     position: relative;
     overflow-x: hidden;
-    min-height: 100vh;
+    min-height: 100dvh;
 }
 .lab-box,
 .float img {
@@ -532,6 +532,7 @@ hr { border: none; }
     .box {
         padding: 20px;
         font-size: 4vw;
+        width: 100%;
         max-width: 90vw;
         animation: none;
         backdrop-filter: none;
