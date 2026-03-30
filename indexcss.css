@@ -58,6 +58,9 @@ body.light-mode {
 html {
     scroll-behavior: smooth;
 }
+html, body {
+    height: 100%;
+}
 .section-nav {
     display: flex;
     justify-content: center;
@@ -70,6 +73,7 @@ html {
     border: 3px solid var(--border-color);
     border-radius: 50px;
     box-shadow: var(--box-box-shadow);
+    text-align: center;
 }
 
 .section-nav a {
@@ -91,6 +95,7 @@ body {
     background-size: cover;
     position: relative;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 .lab-box,
 .float img {
@@ -424,6 +429,7 @@ p, li, td, th {
     border-radius: 100px;
     cursor: pointer;
     transition: opacity 1s ease;
+    transform: translateZ(0);
 }
 #theme-toggle.show {
     opacity: 1;
@@ -444,6 +450,7 @@ p, li, td, th {
     font-size: 18px;
     box-shadow: var(--box-box-shadow);
     transition: 0.3s;
+    transform: translateZ(0);
 }
 
 #scrollTopBtn:hover {
@@ -488,6 +495,9 @@ hr { border: none; }
     body::before,
     body::after {
         display: none;
+    }
+    .title {
+        font-size: 35px;
     }
 
     .lab-box::before {
