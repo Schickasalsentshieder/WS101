@@ -422,8 +422,8 @@ p, li, td, th {
     display: block;
     opacity: 0;
     position: fixed;
-    top: 30px;
-    right: 20px;
+    top: 20px;
+    right: 20x;
     z-index: 10000;
     padding: 15px 15px;
     background-color: var(--theme-toggle-background-color);
@@ -433,6 +433,7 @@ p, li, td, th {
     border-radius: 100px;
     cursor: pointer;
     transition: opacity 1s ease;
+    transform: translateZ(0);
 }
 #theme-toggle.show {
     opacity: 1;
@@ -440,8 +441,8 @@ p, li, td, th {
 #scrollTopBtn {
     display: none;
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
     z-index: 99;
     border: none;
     outline: none;
@@ -453,6 +454,7 @@ p, li, td, th {
     font-size: 18px;
     box-shadow: var(--box-box-shadow);
     transition: 0.3s;
+    transform: translateZ(0);
 }
 
 #scrollTopBtn:hover {
@@ -506,7 +508,7 @@ hr { border: none; }
         font-size: 35px;
     }
     .section-nav {
-        font-size: 10px;
+        font-size: 12.5px;
         text-align: center;
     }
     .lab-box::before {
