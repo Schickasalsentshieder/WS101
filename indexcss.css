@@ -166,12 +166,8 @@ body {
     border-radius: 25px;
     border: 5px solid var(--man-nah-border);
     overflow: visible;
-    box-shadow: inset 0 0 20px #000,
-                inset 5px 5px 10px #222,
-                inset -5px -5px 10px #666,
-                0 0 20px black;
     z-index: 1;
-    opacity: 1;
+    opacity: 0;
     animation: none;
 }
 
@@ -495,7 +491,7 @@ ul {
 
 hr { border: none; }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     body::before,
     body::after {
         display: none;
@@ -555,6 +551,7 @@ hr { border: none; }
 
     .box:hover {
         animation: none;
+        box-shadow: var(--box-box-shadow);
     }
 
     .box::before {
