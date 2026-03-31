@@ -1,14 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     const intro = document.querySelector(".intro");
     const toggleBtn = document.getElementById("theme-toggle");
+    const mainNah = document.getElementById("main-nah");
 
     const leftSword = document.getElementById("left-sword");
     const rightSword = document.getElementById("right-sword");
 
-    setTimeout(() => {
-        intro.style.display = "none";
-        toggleBtn.classList.add("show");
-    }, 4500);
+    mainNah.style.opacity = 0;
 
     function updateSwords() {
         if (document.body.classList.contains("light-mode")) {
@@ -27,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     let mybutton = document.getElementById("scrollTopBtn");
-
     window.onscroll = function() {
         mybutton.style.display = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? "block" : "none";
     };
@@ -36,4 +33,17 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     };
+
+    const introDuration = 4500;
+    const fadeInTime = 2000;
+
+    setTimeout(() => {
+        mainNah.style.transition = `opacity ${fadeInTime}ms ease-in-out`;
+        mainNah.style.opacity = 1;
+    }, introDuration - fadeInTime);
+
+    setTimeout(() => {
+        intro.style.display = "none";
+        toggleBtn.classList.add("show");
+    }, introDuration);
 });
