@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const leftSword = document.getElementById("left-sword");
     const rightSword = document.getElementById("right-sword");
 
-    mainNah.style.opacity = 0;
+    mainNah.style.opacity = 1;
 
     function updateSwords() {
         if (document.body.classList.contains("light-mode")) {
@@ -17,21 +17,37 @@ document.addEventListener("DOMContentLoaded", () => {
             rightSword.src = "image/sword_transparent(2).png";
         }
     }
+
+    function updateThemeIcon() {
+        if (document.body.classList.contains("light-mode")) {
+            toggleBtn.textContent = "Light Mode☀️";
+        } else {
+            toggleBtn.textContent = "Dark Mode🌙";
+        }
+    }
+
     updateSwords();
+    updateThemeIcon();
 
     toggleBtn.addEventListener("click", () => {
         document.body.classList.toggle("light-mode");
         updateSwords();
+        updateThemeIcon();
     });
 
     let mybutton = document.getElementById("scrollTopBtn");
+
     window.onscroll = function() {
-        mybutton.style.display = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? "block" : "none";
+        mybutton.style.display =
+            (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
+            ? "block"
+            : "none";
     };
 
     window.topFunction = function() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
+        history.pushState("", document.title, window.location.pathname);
     };
 
     const introDuration = 4500;
@@ -40,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
         mainNah.style.transition = `opacity ${fadeInTime}ms ease-in-out`;
         mainNah.style.opacity = 1;
-    }, introDuration - fadeInTime);
+    }, 100);
 
     setTimeout(() => {
         intro.style.display = "none";

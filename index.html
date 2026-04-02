@@ -1,64 +1,66 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio</title>
-        <link rel="stylesheet" href="indexcss.css">
-        <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-        <link rel="preload" href="image/blackhole.jpg" as="image">
-        <link rel="preload" href="image/heaven.jpg" as="image">
-        <link rel="preload" href="image/sword_transparent(2).png" as="image">
-        <link rel="preload" href="image/sword_transparent.png" as="image">
-        <link rel="preload" href="image/light_sword.png" as="image">
-        <link rel="preload" href="image/light_sword2.png" as="image">
-    </head>
-    <body>
-        <button id="theme-toggle";">
-        Toggle Light/Dark Mode
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="indexcss.css">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="preload" href="image/blackhole.jpg" as="image">
+    <link rel="preload" href="image/heaven.jpg" as="image">
+    <link rel="preload" href="image/sword_transparent(2).png" as="image">
+    <link rel="preload" href="image/sword_transparent.png" as="image">
+    <link rel="preload" href="image/light_sword.png" as="image">
+    <link rel="preload" href="image/light_sword2.png" as="image">
+</head>
+<body>
+    <button id="theme-toggle">
+        ☀️
     </button>
-        <div class="intro">
-            <div class="flash"></div>
-            <div class="text text1">MY</div>
-            <div class="text text2">PORTFOLIO</div>
+
+    <div class="intro">
+        <div class="flash"></div>
+        <div class="text text1">MY</div>
+        <div class="text text2">PORTFOLIO</div>
+    </div>
+
+    <div id="main-nah">
+        <h1 class="title">MY PORTFOLIO</h1>
+        <nav class="section-nav">
+            <a href="#about">About Me</a>
+            <a href="#Projects">My Projects</a>
+            <a href="#Ilove">I Love</a>
+            <a href="#SA">Social Accounts</a>
+        </nav>
+        <hr>
+        <hr>
+
+        <div class="profile-group">
+            <img src="image/light_sword.png" id="left-sword" class="sword left-sword">
+            <div class="float">
+                <img src="image/animatedme.png" alt="Meinard T. Noble" width="180px" height="180px">
+            </div>
+            <img src="image/light_sword2.png" id="right-sword" class="sword right-sword">
         </div>
-        
-        <div id="main-nah">
-            <h1 class="title">MY PORTFOLIO</h1>
-            <nav class="section-nav">
-                <a href="#about">About Me</a>
-                <a href="#Projects">My Projects</a>
-                <a href="#Ilove">I Love</a>
-                <a href="#SA">Social Accounts</a>
-            </nav>
-            <hr>
-            <hr>
 
-            <div class="profile-group">
-                <img src="image/light_sword.png" id="left-sword" class="sword left-sword">
-                <div class="float">
-                    <img src="image/animatedme.png" alt="Meinard T. Noble" width="180px" height="180px">
-                </div>
-                <img src="image/light_sword2.png" id="right-sword" class="sword right-sword">
-            </div>
+        <div class="box">
+            <div class="title">Meinard T. Noble</div>
+            <p>
+                Mabato-bato San Francisco Magalang Pampanga<br>
+                <a href="https://mail.google.com/">meinard25noble@gmail.com</a><br>
+                +639532507526
+            </p>
+            <p>
+                Welcome to my <b>Web Systems and Technologies 1 Portfolio!</b> This portfolio
+                <br>shows the skills that I've learned in HTML and what I've learned
+                <br>exploring more things during the run. This is the fruit of what I've learned for now.
+            </p>
+        </div>
 
-            <div class="box">
-                <div class="title">Meinard T. Noble</div>
-                <p>
-                    Mabato-bato San Francisco Magalang Pampanga<br>
-                    <a href="https://mail.google.com/">meinard25noble@gmail.com</a><br>
-                    +639532507526
-                </p>
-                <p>
-                    Welcome to my <b>Web Systems and Technologies 1 Portfolio!</b> This portfolio
-                    <br>shows the skills that I've learned in HTML and what I've learned
-                    <br>exploring more things during the run. This is the fruit of what I've learned for now.
-                </p>
-            </div>
-            
-            <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">▲</button>
+        <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">▲</button>
 
+        <div class="box-row">
             <div class="box" id="about">
                 <h1>&#127775 About Me!</h1>
                 <p>
@@ -80,7 +82,9 @@
                     <br>that I haven't encountered in my life.
                 </p>
             </div>
+        </div>
 
+        <div class="box-row">
             <div class="box">
                 <h2>&#127891 Education</h2>
                 <p><b>Senior High School:</b> Bonifacio V. Romero High School (ICT/CSS Strand)</p>
@@ -96,89 +100,106 @@
                     <img src="image/python2.jpg" width="100">
                 </div>
             </div>
+        </div>
 
-            <div class="projects-title" id="Projects">
-                <h1>&#128223 My Projects</h1>
-            </div>
+        <div class="projects-title" id="Projects">
+            <h1>&#128223 My Projects</h1>
+        </div>
 
-            <div class="projects-title2">
-            <h2>&#128203 MIDTERMS</h2>
-            </div>
-            <div class="lab-container">
-                <a href="Midterm Lab Tasks/MLT1/Resume.html" target="_blank" class="lab-box">
-                    <h4>Lab Task 1</h4>
-                    <p>Resume</p>
-                </a>
-                <a href="Midterm Lab Tasks/MLT2/UnandOrList.html" target="_blank" class="lab-box">
-                    <h4>Lab Task 2</h4>
-                    <p>Lists and Table</p>
-                </a>
-                <a href="Midterm Lab Tasks/MLT3/Form.html" target="_blank" class="lab-box">
-                    <h4>Lab Task 3</h4>
-                    <p>HTML Forms</p>
-                </a>
-                <a href="Midterm Lab Tasks/MLT4/Image Maps.html" target="_blank" class="lab-box">
-                    <h4>Lab Task 4</h4>
-                    <p>Image Maps</p>
-                </a>
-                <a href="Midterm Lab Tasks/MLT5/Revamp Resume.html" target="_blank" class="lab-box">
-                    <h4>Lab Task 5</h4>
-                    <p>Applying CSS</p>
-                </a>
-                <a href="Midterm Lab Tasks/MLT6/LabTask6-1.html" target="_blank" class="lab-box">
-                    <h4>Lab Task 6</h4>
-                    <p>Display Property</p>
-                </a>
-                <a href="Midterm Lab Tasks/MLT7/Semantic.html" target="_blank" class="lab-box">
-                    <h4>Lab Task 7</h4>
-                    <p>Semantic</p>
-                </a>
-                <a href="Midterm Lab Tasks/MLT8/Stylesheet1.html" target="_blank" class="lab-box">
-                    <h4>Lab Task 8</h4>
-                    <p>Stylesheet</p>
-                </a>
-            </div>
-
-            <div class="projects-title2">
-            <h2>&#128205 FINALS</h2>
-            </div>
-            <div class="lab-container">
-                <a href="Final Lab Tasks/FLT1/CSSpositions.html" target="_blank" class="lab-box">
-                    <h4>Lab Task 1</h4>
-                    <p>CSS Positions</p>
-                </a>
-                <a href="Final Lab Tasks/FLT2/FLT2.html" target="_blank" class="lab-box">
-                    <h4>Lab Task 2</h4>
-                    <p>Ongoing...</p>
-                </a>
-                <a href="Final Lab Tasks/FLT3/FLT3.html" target="_blank" class="lab-box">
-                    <h4>Lab Task 3</h4>
-                    <p>Ongoing...</p>
-                </a>
-                <a href="Final Lab Tasks/FLT4/FLT4.html" target="_blank" class="lab-box">
-                    <h4>Lab Task 4</h4>
-                    <p>Ongoing...</p>
-                </a>
-                <a href="Final Lab Tasks/FLT5/FLT5.html" target="_blank" class="lab-box">
-                    <h4>Lab Task 5</h4>
-                    <p>Ongoing...</p>
-                </a>
+        <div class="projects-row">
+            <div class="projects-col" id="midterms">
+                <div class="projects-title2">
+                    <h2>&#128203 MIDTERMS</h2>
+                </div>
+                <div class="lab-container">
+                    <a href="Midterm Lab Tasks/MLT1/Resume.html" target="_blank" class="lab-box">
+                        <h4>Lab Task 1</h4>
+                        <p>Resume</p>
+                    </a>
+                    <a href="Midterm Lab Tasks/MLT2/UnandOrList.html" target="_blank" class="lab-box">
+                        <h4>Lab Task 2</h4>
+                        <p>Lists and Table</p>
+                    </a>
+                    <a href="Midterm Lab Tasks/MLT3/Form.html" target="_blank" class="lab-box">
+                        <h4>Lab Task 3</h4>
+                        <p>HTML Forms</p>
+                    </a>
+                    <a href="Midterm Lab Tasks/MLT4/Image Maps.html" target="_blank" class="lab-box">
+                        <h4>Lab Task 4</h4>
+                        <p>Image Maps</p>
+                    </a>
+                    <a href="Midterm Lab Tasks/MLT5/Revamp Resume.html" target="_blank" class="lab-box">
+                        <h4>Lab Task 5</h4>
+                        <p>Applying CSS</p>
+                    </a>
+                    <a href="Midterm Lab Tasks/MLT6/LabTask6-1.html" target="_blank" class="lab-box">
+                        <h4>Lab Task 6</h4>
+                        <p>Display Property</p>
+                    </a>
+                    <a href="Midterm Lab Tasks/MLT7/Semantic.html" target="_blank" class="lab-box">
+                        <h4>Lab Task 7</h4>
+                        <p>Semantic</p>
+                    </a>
+                    <a href="Midterm Lab Tasks/MLT8/Stylesheet1.html" target="_blank" class="lab-box">
+                        <h4>Lab Task 8</h4>
+                        <p>Stylesheet</p>
+                    </a>
+                </div>
             </div>
 
+            <div class="projects-col" id="finals">
+                <div class="projects-title2">
+                    <h2>&#128205 FINALS</h2>
+                </div>
+                <div class="lab-container">
+                    <a href="Final Lab Tasks/FLT1/CSSpositions.html" target="_blank" class="lab-box">
+                        <h4>Lab Task 1</h4>
+                        <p>CSS Positions</p>
+                    </a>
+                    <a href="Final Lab Tasks/FLT2/FLT2.html" target="_blank" class="lab-box">
+                        <h4>Lab Task 2</h4>
+                        <p>Ongoing...</p>
+                    </a>
+                    <a href="Final Lab Tasks/FLT3/FLT3.html" target="_blank" class="lab-box">
+                        <h4>Lab Task 3</h4>
+                        <p>Ongoing...</p>
+                    </a>
+                    <a href="Final Lab Tasks/FLT4/FLT4.html" target="_blank" class="lab-box">
+                        <h4>Lab Task 4</h4>
+                        <p>Ongoing...</p>
+                    </a>
+                    <a href="Final Lab Tasks/FLT5/FLT5.html" target="_blank" class="lab-box">
+                        <h4>Lab Task 5</h4>
+                        <p>Ongoing...</p>
+                    </a>
+                    <a href="Final Lab Tasks/FLT6/FLT6.html" target="_blank" class="lab-box">
+                        <h4>Lab Task 6</h4>
+                        <p>Ongoing...</p>
+                    </a>
+                    <a href="Final Lab Tasks/FLT7/FLT7.html" target="_blank" class="lab-box">
+                        <h4>Lab Task 7</h4>
+                        <p>Ongoing...</p>
+                    </a>
+                    <a href="Final Lab Tasks/FLT8/FLT8.html" target="_blank" class="lab-box">
+                        <h4>Lab Task 8</h4>
+                        <p>Ongoing...</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-by-side">
             <div class="box" id="Ilove">
                 <h2>&#127881 I Love:</h2>
                 <ul>
-                    <li>&#128187 Playing Video Games- it's one of many things that entertain me!</li>
-                    <li>&#127795 Exploring- many places that I haven't been before</li>
-                    <li>&#128214 Reading- Manga, Manhwa, Manhua, Novel!</li>
-                    <li>&#127926 Listening to music while coding!</li>
-                    <li>&#128588 Being with my family members</li>
+                    <li>&#128214 Reading Manga, Manhwa, Manhua, Novel!</li>
+                    <li>&#128588 Being with my family</li>
                     <li>&#129358 Playing baseball</li>
-                    <li>&#128192 Watching anime</li>
                     <li>Muichiro Tokito
-                    <div class="image-container">
-                        <img src="image/Muichiro.webp" alt="Image" width="100">
-                        <div class="image-text">KYAAA~</div>
+                        <div class="image-container">
+                            <img src="image/Muichiro.webp" alt="Image" width="100">
+                            <div class="image-text">KYAAA~</div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -186,56 +207,56 @@
             <div class="box">
                 <h2>&#128269 Fun Facts About Me:</h2>
                 <ul>
+                    <li>Sometimes I fall asleep with my phone is on my face &#128517;</li>
                     <li>My longest screen time is 17 hours and 50 minutes &#128242;</li>
-                    <li>Sometimes I fall asleep while my phone is still on &#128517;</li>
-                    <li>I was once an introvert but now I'm an ambivert &#128540;</li>
-                    <li>I can move both of my ears without touching &#128066;</li>
-                    <li>I like to learn more about space relativity &#127769;</li>
+                    <li>I like to learn anything about space relativity &#127769;</li>
                     <li>I play chess but I always blunder &#128052;</li>
+                    <li>I can move both of my ears &#128066;</li>
                 </ul>
-            </div>
-
-            <div class="box">
-                <h2>&#128077 My Skills</h2>
-                <ul>
-                    <li>Time management &#9200;</li>
-                    <li>Adapts faster &#128640;</li>
-                    <li>Composed &#128528;</li>
-                    <li>Creative &#127912;</li>
-                </ul>
-                <hr>
-                <h1>Wanna interact with me?</h1>
-                <h2>&#128222 Click below to see my Social Accounts</h2>
-            </div>
-
-            <div class="lab-container" id="SA">
-                <a href="https://x.com/n14489" class="lab-box" target="_blank">
-                    <img src="image/X.avif" width="94">
-                </a>
-                <a href="https://www.threads.com/@muichiro071623__" class="lab-box" target="_blank">
-                    <img src="image/Picture2.jpg" width="150">
-                </a>
-                <a href="https://www.tiktok.com/@meinardnoble?_r=1&_t=ZS-93ObxvRyWJA" class="lab-box" target="_blank">
-                    <img src="image/Picture1.png" width="150">
-                </a>
-                <a href="https://discord.com/users/muichiro_tokito052507" class="lab-box" target="_blank">
-                    <img src="image/Picture3.png" width="150">
-                </a>
-                <a href="https://www.reddit.com/u/Fate_Akabane/s/FutDX3NnaI" class="lab-box" target="_blank">
-                    <img src="image/Picture4.png" width="150">
-                </a>
-                <a href="https://t.me/MFAOAFLFVTMYM" class="lab-box" target="_blank">
-                    <img src="image/Picture5.png" width="150">
-                </a>
-                <a href="https://www.instagram.com/muichiro071623__?igsh=MWR5dGd1czgwNzZtcw==" class="lab-box" target="_blank">
-                    <img src="image/Picture6.png" width="150">
-                </a>
-                <a href="https://www.facebook.com/share/1AgeBwe7SS/" class="lab-box" target="_blank">
-                    <img src="image/Picture7.png" width="150">
-                </a>
             </div>
         </div>
 
-        <script src="audio/script.js"></script>
-    </body>
-    </html>
+        <div class="box">
+            <h2>&#128077 My Skills</h2>
+            <ul>
+                <li>Time management &#9200;</li>
+                <li>Adapts faster &#128640;</li>
+                <li>Composed &#128528;</li>
+                <li>Creative &#127912;</li>
+            </ul>
+            <hr>
+            <h1>Wanna interact with me?</h1>
+            <h2>&#128222 Click below to see my Social Accounts</h2>
+        </div>
+
+        <div class="lab-container" id="SA">
+            <a href="https://x.com/n14489" class="lab-box" target="_blank">
+                <img src="image/X.avif" width="94">
+            </a>
+            <a href="https://www.threads.com/@muichiro071623__" class="lab-box" target="_blank">
+                <img src="image/Picture2.jpg" width="150">
+            </a>
+            <a href="https://www.tiktok.com/@meinardnoble?_r=1&_t=ZS-93ObxvRyWJA" class="lab-box" target="_blank">
+                <img src="image/Picture1.png" width="150">
+            </a>
+            <a href="https://discord.com/users/muichiro_tokito052507" class="lab-box" target="_blank">
+                <img src="image/Picture3.png" width="150">
+            </a>
+            <a href="https://www.reddit.com/u/Fate_Akabane/s/FutDX3NnaI" class="lab-box" target="_blank">
+                <img src="image/Picture4.png" width="150">
+            </a>
+            <a href="https://t.me/MFAOAFLFVTMYM" class="lab-box" target="_blank">
+                <img src="image/Picture5.png" width="150">
+            </a>
+            <a href="https://www.instagram.com/muichiro071623__?igsh=MWR5dGd1czgwNzZtcw==" class="lab-box" target="_blank">
+                <img src="image/Picture6.png" width="150">
+            </a>
+            <a href="https://www.facebook.com/share/1AgeBwe7SS/" class="lab-box" target="_blank">
+                <img src="image/Picture7.png" width="150">
+            </a>
+        </div>
+    </div>
+
+    <script src="audio/script.js"></script>
+</body>
+</html>
