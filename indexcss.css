@@ -25,10 +25,12 @@
         0 0 10px rgb(0, 0, 0),
         0 0 25px rgb(255, 0, 0);
     --project-title-color: red;
-    --theme-toggle-background-color: rgba(255,0,0,0.8);
-    --theme-toggle-color: white;
+    --theme-toggle-background-color: rgba(255,255,255,0.8);
+    --theme-toggle-color: black;
+    --theme-toggle-box-shadow: 0 0 5px whitesmoke;
     --title-font: 'Creepster';
     --box-hover-a: red;
+    --scroll-topbutton: red;
 }
 
 body.light-mode {
@@ -54,10 +56,12 @@ body.light-mode {
         0 0 10px rgb(255, 255, 255),
         0 0 25px rgb(0, 0, 0);
     --project-title-color: rgb(255, 255, 255);
-    --theme-toggle-background-color: rgba(255, 255, 255, 0.8);
-    --theme-toggle-color: black;
+    --theme-toggle-background-color: rgba(255,0,0,0.8);
+    --theme-toggle-color: white;
+    --theme-toggle-box-shadow: 0 0 5px red;
     --title-font: 'Open Sans';
     --box-hover-a: gold;
+    --scroll-topbutton: white;
 }
 html {
     scroll-behavior: smooth;
@@ -91,6 +95,8 @@ html, body {
 .section-nav a:hover {
     color: var(--box-hover-a);
     transform: scale(1.1);
+    border-radius: 50px;
+    box-shadow: var(--box-box-shadow);
 }
 body {
     margin: 0;
@@ -470,6 +476,7 @@ p, li, td, th {
     padding: 15px 15px;
     background-color: var(--theme-toggle-background-color);
     color: var(--theme-toggle-color);
+    box-shadow: var(--theme-toggle-box-shadow);
     font-weight: bolder;
     border: none;
     border-radius: 100px;
@@ -488,8 +495,8 @@ p, li, td, th {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: var(--theme-toggle-background-color);
-    color: var(--theme-toggle-color);
+    background-color: var(--scroll-topbutton);
+    color: var(--text-color);
     cursor: pointer;
     padding: 10px 15px;
     border-radius: 50%;
@@ -545,6 +552,13 @@ hr { border: none; }
 
     #theme-toggle {
         opacity: 1;
+        box-shadow: none;
+    }
+    #scrollTopBtn {
+        box-shadow: none;
+    }
+    #scrollTopBtn:hover {
+        box-shadow: none;
     }
     .title {
         font-size: 35px;
@@ -556,12 +570,10 @@ hr { border: none; }
 
     .left-sword {
         transform: rotate(69deg) scale(1);
-        z-index: 0;
     }
 
     .right-sword {
         transform: rotate(290deg) scale(1);
-        z-index: 0;
     }
     .section-nav {
         font-size: 13px;
@@ -604,7 +616,7 @@ hr { border: none; }
         max-width: 90vw;
         animation: none;
         backdrop-filter: none;
-        box-shadow: var(--box-box-shadow);
+        box-shadow: 0 0 20px var(--box-box-shadow);
     }
 
     .box:hover {

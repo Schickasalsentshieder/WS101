@@ -20,9 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateThemeIcon() {
         if (document.body.classList.contains("light-mode")) {
-            toggleBtn.textContent = "Light Mode☀️";
-        } else {
             toggleBtn.textContent = "Dark Mode🌙";
+            toggleBtn.title = "Switch to Dark Mode"
+        } else {
+            toggleBtn.textContent = "Light Mode☀️";
+            toggleBtn.title = "Switch to Light Mode"
         }
     }
 
