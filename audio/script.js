@@ -2,11 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const intro = document.querySelector(".intro");
     const toggleBtn = document.getElementById("theme-toggle");
     const mainNah = document.getElementById("main-nah");
-
     const leftSword = document.getElementById("left-sword");
     const rightSword = document.getElementById("right-sword");
-
-    mainNah.style.opacity = 1;
 
     function updateSwords() {
         if (document.body.classList.contains("light-mode")) {
@@ -17,16 +14,23 @@ document.addEventListener("DOMContentLoaded", () => {
             rightSword.src = "image/sword_transparent(2).png";
         }
     }
+    
+    if(localStorage.getItem("theme")==="light-mode"){
+        document.body.classList.add("light-mode");
+    }
 
     function updateThemeIcon() {
         if (document.body.classList.contains("light-mode")) {
+            localStorage.setItem("theme", "light-mode")
             toggleBtn.textContent = "Dark Mode🌙";
             toggleBtn.title = "Switch to Dark Mode"
         } else {
+            localStorage.setItem("theme", "dark-mode")
             toggleBtn.textContent = "Light Mode☀️";
             toggleBtn.title = "Switch to Light Mode"
         }
     }
+    
 
     updateSwords();
     updateThemeIcon();
@@ -53,12 +57,10 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const introDuration = 4500;
-    const fadeInTime = 2000;
 
     setTimeout(() => {
-        mainNah.style.transition = `opacity ${fadeInTime}ms ease-in-out`;
         mainNah.style.opacity = 1;
-    }, 100);
+    });
 
     setTimeout(() => {
         intro.style.display = "none";
