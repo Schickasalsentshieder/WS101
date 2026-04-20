@@ -25,9 +25,9 @@
         0 0 10px rgb(0, 0, 0),
         0 0 25px rgb(255, 0, 0);
     --project-title-color: red;
-    --theme-toggle-background-color: rgba(255,255,255,0.8);
-    --theme-toggle-color: black;
-    --theme-toggle-box-shadow: 0 0 5px whitesmoke;
+    --theme-toggle-background-color: rgba(255,0,0,0.8);
+    --theme-toggle-color: whitesmoke;
+    --theme-toggle-box-shadow: 0 0 5px red;
     --title-font: 'Creepster';
     --box-hover-a: red;
     --scroll-topbutton: red;
@@ -56,9 +56,9 @@ body.light-mode {
         0 0 10px rgb(255, 255, 255),
         0 0 25px rgb(0, 0, 0);
     --project-title-color: rgb(255, 255, 255);
-    --theme-toggle-background-color: rgba(255,0,0,0.8);
-    --theme-toggle-color: white;
-    --theme-toggle-box-shadow: 0 0 5px red;
+    --theme-toggle-background-color: rgba(255, 255, 255, 0.8);
+    --theme-toggle-color: black;
+    --theme-toggle-box-shadow: 0 0 5px whitesmoke;
     --title-font: 'Open Sans';
     --box-hover-a: gold;
     --scroll-topbutton: white;
